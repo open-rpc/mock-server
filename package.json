@@ -1,0 +1,26 @@
+{
+  "name": "generator-mock-server",
+  "version": "1.0.0",
+  "description": "Provides a mock RPC API given an open rpc schema",
+  "main": "server.js",
+  "dependencies": {
+    "jayson": "^2.1.1",
+    "json-schema-faker": "^0.5.0-rc16",
+    "json-schema-ref-parser": "^6.0.3",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-rpc/generator-mock-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/open-rpc/generator-mock-server/issues"
+  },
+  "homepage": "https://github.com/open-rpc/generator-mock-server#readme"
+}

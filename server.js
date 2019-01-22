@@ -15,6 +15,7 @@ refParser.dereference(rawSchema).then((schema) => {
   }, {}));
 
   server.http().listen(3000);
+  console.log('service is listening on port 3000');
 });
 
 function generateResponse(schema, methodName) {

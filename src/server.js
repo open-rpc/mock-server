@@ -1,5 +1,3 @@
-const { reduce } = require('lodash');
-const fs = require('fs');
 const jayson = require('jayson');
 const parseSchema = require('@open-rpc/schema-utils-js');
 const buildMethodHandlerMapping = require('./generate-method-mapping');

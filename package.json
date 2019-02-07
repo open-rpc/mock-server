@@ -6,9 +6,7 @@
   "dependencies": {
     "@open-rpc/schema-utils-js": "^1.0.1",
     "jayson": "^2.1.1",
-    "json-schema-faker": "^0.5.0-rc16",
-    "json-schema-ref-parser": "^6.0.3",
-    "lodash": "^4.17.11"
+    "json-schema-faker": "^0.5.0-rc16"
   },
   "devDependencies": {},
   "scripts": {

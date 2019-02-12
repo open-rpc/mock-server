@@ -5,7 +5,7 @@ const generateResponse = async (schema, methodName) => {
 
   if (method === undefined) { return 'method not found: ' + methodName; }
 
-  const schemaForResponse = method.results.schema;
+  const schemaForResponse = method.result.schema;
 
   const generatedValue = jsf.generate(schemaForResponse);
 

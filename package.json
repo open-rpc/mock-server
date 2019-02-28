@@ -4,13 +4,16 @@
   "description": "Provides a mock RPC API given an open rpc schema",
   "main": "server.js",
   "dependencies": {
+    "@open-rpc/examples": "^1.0.0",
     "@open-rpc/schema-utils-js": "^1.0.1",
+    "djv": "^2.1.1",
     "jayson": "^2.1.2",
+    "jest": "^24.1.0",
     "json-schema-faker": "^0.5.0-rc16"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js"
   },
   "repository": {

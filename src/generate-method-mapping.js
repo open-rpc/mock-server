@@ -21,7 +21,6 @@ const makeHandler = (method, validator) => {
         .value();
     }
 
-    console.log(validationErrors);
     let response;
     if (validationErrors.length > 0) {
       //const err = new Error(`Parameter Validation Error: ${JSON.stringify(validationErrors)}`);

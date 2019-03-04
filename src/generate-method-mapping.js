@@ -17,15 +17,22 @@ const makeHandler = (method, validator) => {
     if (method.paramStructure === 'by-name') {
     } else {
       validationErrors = _.chain(method.params)
-        .map((param, index) => validator.validate(`${method.name}/${index}`, args[index]))
+        .map((param, index) => {
+          const methodParamName = `${method.name}/${index}`;
+          var isValid = validator.validate(methodParamName, args[index]);
+
+          if (!isValid) {
+            return { param: method.paramStructure === 'by-name' ? param.name : index, errors: validator.errors };
+          }
+        })
+        .compact()
         .value();
     }
 
     let response;
     if (validationErrors.length > 0) {
-      //const err = new Error(`Parameter Validation Error: ${JSON.stringify(validationErrors)}`);
       const err = this.error(-32602);
-      err.data = validator.errors;
+      err.data = validationErrors;
       cb(err, null);
       return;
     }

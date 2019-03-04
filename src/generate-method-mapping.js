@@ -1,5 +1,5 @@
 const jsf = require('json-schema-faker');
-const Djv = require('djv');
+const Ajv = require('ajv');
 
 const generateResponse = async (method) => {
   if (method === undefined) { return 'method not found: ' + method.name; }
@@ -12,8 +12,6 @@ const generateResponse = async (method) => {
 
 const makeHandler = (method, validator) => {
   return async (args, cb) => {
-    console.log('titttts');
-    console.log(method.result);
     if (method.paramStructure === 'by-name') {
     } else {
       console.log(args);
@@ -28,7 +26,7 @@ const makeHandler = (method, validator) => {
 const buildMethodHandlerMapping = (openrpcSchema) => {
   return openrpcSchema.methods.reduce((memo, method) => {
     const  {name, paramStructure, params, result} = method;
-    const paramsValidator = new Djv();
+    const paramsValidator = new Ajv();
     if (params) {
       params.forEach((param) => paramsValidator.addSchema(param.name, param.schema));
     }

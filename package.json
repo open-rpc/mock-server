@@ -1,17 +1,24 @@
 {
-  "name": "generator-mock-server",
-  "version": "1.0.0",
+  "name": "@open-rpc/generator-mock-server",
+  "version": "1.0.1",
   "description": "Provides a mock RPC API given an open rpc schema",
-  "main": "server.js",
+  "bin": {
+    "open-rpc-mock-server": "./bin/cli.js"
+  },
   "dependencies": {
     "@open-rpc/schema-utils-js": "^1.0.1",
+    "ajv": "^6.10.0",
     "jayson": "^2.1.2",
     "json-schema-faker": "^0.5.0-rc16"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@open-rpc/examples": "^1.0.8",
+    "jest": "^24.1.0",
+    "json-schema-ref-parser": "^6.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "jest",
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",

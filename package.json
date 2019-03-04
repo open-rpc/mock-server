@@ -14,7 +14,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "jest",
-    "start": "node server.js"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",

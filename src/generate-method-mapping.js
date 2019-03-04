@@ -41,7 +41,12 @@ const buildMethodHandlerMapping = (openrpcSchema) => {
 
     const paramsValidator = new Ajv();
     if (params) {
-      params.forEach((param, i) => paramsValidator.addSchema(param.schema, `${name}/${paramStructure === 'by-name' ? param.name : i}`));
+      params.forEach((param, i) => {
+        if (!param.schema && !param.name) {
+          console.log(params, result);
+        }
+        paramsValidator.addSchema(param.schema, `${name}/${paramStructure === 'by-name' ? param.name : i}`)
+      });
     }
     memo[name] = makeHandler(method, paramsValidator);
     return memo;

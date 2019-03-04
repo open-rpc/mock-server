@@ -13,23 +13,17 @@ const generateResponse = async (method) => {
 
 const makeHandler = (method, validator) => {
   return async function(args, cb)  {
-    let validationErrors;
-    if (method.paramStructure === 'by-name') {
-    } else {
-      validationErrors = _.chain(method.params)
-        .map((param, index) => {
-          const methodParamName = `${method.name}/${index}`;
-          var isValid = validator.validate(methodParamName, args[index]);
+    const validationErrors = _.chain(method.params)
+      .map((param, index) => {
+        const paramId = method.paramStructure === 'by-name' ? param.name : index;
+        const methodParamName = `${method.name}/${paramId}`;
+        var isValid = validator.validate(methodParamName, args[paramId]);
 
-          if (!isValid) {
-            return { param: method.paramStructure === 'by-name' ? param.name : index, errors: validator.errors };
-          }
-        })
-        .compact()
-        .value();
-    }
+        if (!isValid) { return { param: paramId, errors: validator.errors }; }
+      })
+      .compact()
+      .value();
 
-    let response;
     if (validationErrors.length > 0) {
       const err = this.error(-32602);
       err.data = validationErrors;
@@ -37,7 +31,7 @@ const makeHandler = (method, validator) => {
       return;
     }
 
-    cb(null, await  generateResponse(method));
+    cb(null, await generateResponse(method));
   };
 };
 

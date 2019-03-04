@@ -1,6 +1,6 @@
 {
   "name": "generator-mock-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides a mock RPC API given an open rpc schema",
    "bin": {
     "open-rpc-mock-server": "./bin/cli.js"
@@ -15,7 +15,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",

@@ -2,10 +2,20 @@ const jsf = require('json-schema-faker');
 const Ajv = require('ajv');
 const _ = require('lodash');
 
-const generateResponse = async (method) => {
+const generateResponse = async (method, args) => {
   if (method === undefined) { return 'method not found: ' + method.name; }
 
   const schemaForResponse = method.result.schema;
+
+  if (method.examples) {
+    const argList = method.paramStructure === 'by-name' ? Object.values(args) : args;
+    const foundExample = method.examples.find((example) => {
+      return JSON.stringify(example.params.map((p) => p.value)) === JSON.stringify(argList);
+    });
+    if (foundExample) {
+      return foundExample.result.value;
+    }
+  }
 
   const generatedValue = await jsf.generate(schemaForResponse);
   return generatedValue;
@@ -31,7 +41,7 @@ const makeHandler = (method, validator) => {
       return;
     }
 
-    cb(null, await generateResponse(method));
+    cb(null, await generateResponse(method, args));
   };
 };
 

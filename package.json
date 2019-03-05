@@ -1,6 +1,6 @@
 {
   "name": "@open-rpc/generator-mock-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Provides a mock RPC API given an open rpc schema",
   "bin": {
     "open-rpc-mock-server": "./bin/cli.js"

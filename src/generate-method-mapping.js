@@ -38,7 +38,6 @@ const makeHandler = (method, validator) => {
 const buildMethodHandlerMapping = (openrpcSchema) => {
   return openrpcSchema.methods.reduce((memo, method) => {
     const  {name, paramStructure, params, result} = method;
-
     const paramsValidator = new Ajv();
     if (params) {
       params.forEach((param, i) => {

@@ -6,7 +6,7 @@
     "open-rpc-mock-server": "./bin/cli.js"
   },
   "dependencies": {
-    "@open-rpc/schema-utils-js": "^1.0.1",
+    "@open-rpc/schema-utils-js": "1.0.2",
     "ajv": "^6.10.0",
     "body-parser": "^1.18.3",
     "connect": "^3.6.6",

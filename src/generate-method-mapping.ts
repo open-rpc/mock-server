@@ -1,31 +1,8 @@
-const jsf = require("json-schema-faker");
-import { mock } from "mock-json-schema";
 import Ajv from "ajv";
 import * as _ from "lodash";
 import { types } from "@open-rpc/meta-schema";
 import { MethodHandlerType, JSONRPCCallbackType } from "jayson/promise";
-
-const generateResponse = async (method: types.MethodObject, args: any): Promise<any> => {
-  const result = method.result as types.ContentDescriptorObject;
-  const schemaForResponse = result.schema;
-
-  if (method.examples) {
-    const argList = method.paramStructure === 'by-name' ? Object.values(args) : args;
-
-    const examples = method.examples as types.ExamplePairingObject[];
-
-    const foundExample = _.find(
-      examples,
-      ({ params }) => _.isMatchWith(params, argList, (exV, argV) => _.map(exV, 'value') === argV)
-    );
-    if (foundExample) {
-      const foundExampleResult = foundExample.result as types.ExampleObject;
-      return foundExampleResult.value;
-    }
-  }
-  const generatedValue = await jsf.generate(schemaForResponse);
-  return generatedValue;
-};
+import { generateResponse } from "./genererate-response";
 
 const makeHandler = (method: types.MethodObject, validator: Ajv.Ajv): MethodHandlerType => {
   return async function(args: any, callback: JSONRPCCallbackType) {

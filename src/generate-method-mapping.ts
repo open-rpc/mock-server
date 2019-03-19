@@ -3,6 +3,7 @@ import * as _ from "lodash";
 import { types } from "@open-rpc/meta-schema";
 import { MethodHandlerType, JSONRPCCallbackType } from "jayson/promise";
 import { generateResponse } from "./genererate-response";
+import { makeIdForMethodContentDescriptors } from "@open-rpc/schema-utils-js";
 
 const makeHandler = (method: types.MethodObject, validator: Ajv.Ajv): MethodHandlerType => {
   return async function(args: any, callback: JSONRPCCallbackType) {
@@ -42,7 +43,7 @@ export const buildMethodHandlerMapping = (openrpcSchema: types.OpenRPC) => {
         }
 
         if (param.schema !== undefined) {
-          paramsValidator.addSchema(param.schema, `${name}/${paramStructure === 'by-name' ? param.name : i}`)
+          paramsValidator.addSchema(param.schema, makeIdForMethodContentDescriptors(method, param));
         }
       });
     }

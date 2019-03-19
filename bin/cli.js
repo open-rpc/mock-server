@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander');
-const server = require('../src/server');
+const server = require('../build/src/server');
 
 program
   .version(require('./get-version'))

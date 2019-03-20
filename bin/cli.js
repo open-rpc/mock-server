@@ -11,5 +11,7 @@ program
         console.error(e);
         process.exit(1);
       });
+
+    console.log(`service is listening on port 3333 via the http protocol`);
   })
   .parse(process.argv);

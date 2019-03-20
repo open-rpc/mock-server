@@ -5,10 +5,11 @@ import cors from "cors";
 import { json as jsonParser } from "body-parser";
 import connect, { HandleFunction } from "connect";
 import { RequestHandler } from "express-serve-static-core";
+import { types } from "@open-rpc/meta-schema";
 
 const server = async (protocol: string, port: number | string, schemaLocation: any) => {
   const app = connect();
-  const schema = await parse(schemaLocation);
+  const schema = await parse(schemaLocation) as types.OpenRPC;
   const methods = {
     ...generateMethodMapping(schema),
     "rpc.discover": (args: any, cb: any) => {
@@ -22,7 +23,6 @@ const server = async (protocol: string, port: number | string, schemaLocation: a
   app.use(jsonParser());
   app.use(jsonRpcServer.middleware() as HandleFunction);
   app.listen(port);
-  console.log(`service is listening on port ${port} via the ${protocol} protocol`);
 };
 
 module.exports = server;

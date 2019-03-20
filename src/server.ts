@@ -1,6 +1,6 @@
 const jayson = require('jayson');
 const { parse } = require('@open-rpc/schema-utils-js');
-const buildMethodHandlerMapping = require('./generate-method-mapping');
+const generateMethodMapping = require('./generate-method-mapping');
 const cors = require('cors');
 const jsonParser = require('body-parser').json;
 const connect = require('connect');
@@ -9,7 +9,7 @@ const server = async (protocol, port, schemaLocation) => {
   const app = connect();
   const schema = await parse(schemaLocation);
   const methods = {
-    ...buildMethodHandlerMapping(schema),
+    ...generateMethodMapping(schema),
     'rpc.discover': (args, cb) => {
       cb(null, schema);
     }

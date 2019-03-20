@@ -3,7 +3,7 @@ import { JSONRPCCallbackTypePlain, JSONRPCError } from "jayson/promise";
 import { types } from "@open-rpc/meta-schema";
 import * as _ from "lodash";
 import { generateResponse } from "./genererate-response";
-import { MethodCallValidator } from "./method-call-validator";
+import { MethodCallValidator } from "@open-rpc/schema-utils-js";
 
 export const generateMethodHandler = (
   method: types.MethodObject,

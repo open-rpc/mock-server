@@ -1,6 +1,6 @@
 import { generateMethodHandler } from "./generate-method-handler";
 import { types } from "@open-rpc/meta-schema";
-import { MethodCallValidator } from "./method-call-validator";
+import { MethodCallValidator } from "@open-rpc/schema-utils-js";
 
 describe("generateMethodHandler", () => {
   const exampleSchema = {

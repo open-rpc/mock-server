@@ -29,8 +29,9 @@
     "publish": "npm run build"
   },
   "dependencies": {
-    "@open-rpc/schema-utils-js": "1.3.0",
+    "@open-rpc/examples": "^1.2.0",
     "@open-rpc/meta-schema": "^1.1.0",
+    "@open-rpc/schema-utils-js": "^1.3.0",
     "ajv": "^6.10.0",
     "body-parser": "^1.18.3",
     "connect": "^3.6.6",
@@ -40,7 +41,6 @@
     "lodash": "^4.17.11"
   },
   "devDependencies": {
-    "@open-rpc/examples": "^1.1.3",
     "@types/jest": "^24.0.11",
     "@types/lodash": "^4.14.123",
     "jest": "^24.1.0",

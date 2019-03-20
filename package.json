@@ -49,6 +49,7 @@
     "@types/lodash": "^4.14.123",
     "jest": "^24.1.0",
     "json-schema-ref-parser": "^6.1.0",
-    "ts-jest": "^24.0.0"
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.14.0"
   }
 }

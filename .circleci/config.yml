@@ -10,7 +10,7 @@ aliases:
   - &save-deps-cache
     key: deps-cache-{{ checksum "package.json" }}
     paths:
-      - ~/generator-mock-server/node_modules
+      - ~/mock-server/node_modules
 
   # -------------------------
   #  ALIASES: Branch Filters
@@ -23,7 +23,7 @@ aliases:
       only:  /^(fix|feat)\/.*$/
 
 defaults: &defaults
-  working_directory: ~/generator-mock-server
+  working_directory: ~/mock-server
 
 jobs:
   test:

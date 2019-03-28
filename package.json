@@ -1,17 +1,17 @@
 {
-  "name": "@open-rpc/generator-mock-server",
-  "version": "1.0.3",
-  "description": "Provides a mock RPC API given an open rpc schema",
+  "name": "@open-rpc/mock-server",
+  "version": "1.0.4",
+  "description": "Provides a mock JSON-RPC API given an OpenRPC Document",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/open-rpc/generator-mock-server.git"
+    "url": "git+https://github.com/open-rpc/mock-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/open-rpc/generator-mock-server/issues"
+    "url": "https://github.com/open-rpc/mock-server/issues"
   },
-  "homepage": "https://github.com/open-rpc/generator-mock-server#readme",
+  "homepage": "https://github.com/open-rpc/mock-server#readme",
   "bin": {
     "open-rpc-mock-server": "./bin/cli.js"
   },

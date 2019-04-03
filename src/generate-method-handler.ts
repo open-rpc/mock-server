@@ -1,5 +1,4 @@
 import { Ajv } from "ajv";
-import { JSONRPCCallbackTypePlain, JSONRPCError } from "jayson/promise";
 import { types } from "@open-rpc/meta-schema";
 import * as _ from "lodash";
 import { generateResponse } from "./genererate-response";
@@ -13,7 +12,7 @@ export const generateMethodHandler = (
     const validationErrors = validator.validate(method.name, args);
 
     if (validationErrors.length > 0) {
-      const error = { code: -32602, data: validationErrors, message: "Invalid parameters" } as JSONRPCError;
+      const error = { code: -32602, data: validationErrors, message: "Invalid parameters" } as any;
       cb(error);
       return;
     }

@@ -1,4 +1,3 @@
-import * as jayson from "jayson";
 import { parse } from "@open-rpc/schema-utils-js";
 import { generateMethodMapping } from "./generate-method-mapping";
 import cors from "cors";
@@ -15,13 +14,21 @@ const server = async (protocol: string, port: number | string, schemaLocation: a
     "rpc.discover": (args: any, cb: any) => {
       cb(null, schema);
     },
-  };
-  const jsonRpcServer = new jayson.Server(methods);
+  } as any;
   const corsMiddleware = cors({ origin: "*" }) as RequestHandler;
 
   app.use(cors({ origin: "*" }) as HandleFunction);
   app.use(jsonParser());
-  app.use(jsonRpcServer.middleware() as HandleFunction);
+  app.use((req: any, res: any) => {
+    const jsonrpcRequest = req.body;
+    methods[jsonrpcRequest.method](req.params, (err: any, result: any) => {
+      res.end({
+        id: req.body.id,
+        jsonrpc: "2.0",
+        result,
+      });
+    });
+  });
   app.listen(port);
 };
 

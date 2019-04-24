@@ -1,5 +1,5 @@
 import { generateResponse } from "./genererate-response";
-import { types } from "@open-rpc/meta-schema";
+import { MethodObject } from "@open-rpc/meta-schema";
 
 describe("generateResponse", () => {
   describe("default case - no examples", () => {
@@ -45,7 +45,7 @@ describe("generateResponse", () => {
         paramStructure: "by-name",
         params: [{ name: "tats", schema: { type: "number" } }],
         result: { name: "bar", schema: { type: "number" } },
-      } as types.MethodObject;
+      } as MethodObject;
 
       const result = await generateResponse(exampleMethod, { tats: 123 });
       expect(result).toBe(321);

@@ -1,6 +1,6 @@
 import { generateMethodHandler } from "./generate-method-handler";
-import { types } from "@open-rpc/meta-schema";
 import { MethodCallValidator } from "@open-rpc/schema-utils-js";
+import { OpenRPC } from "@open-rpc/meta-schema";
 
 describe("generateMethodHandler", () => {
   const exampleSchema = {
@@ -16,7 +16,7 @@ describe("generateMethodHandler", () => {
       },
     ],
     openrpc: "1.0.0-rc1",
-  } as types.OpenRPC;
+  } as OpenRPC;
 
   it("returns a function given a method and a validator", () => {
     const exampleValidator = new MethodCallValidator(exampleSchema);

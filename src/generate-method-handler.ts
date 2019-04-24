@@ -1,12 +1,12 @@
 import { Ajv } from "ajv";
 import { JSONRPCCallbackTypePlain, JSONRPCError } from "jayson/promise";
-import { types } from "@open-rpc/meta-schema";
 import * as _ from "lodash";
 import { generateResponse } from "./genererate-response";
 import { MethodCallValidator } from "@open-rpc/schema-utils-js";
+import { MethodObject } from "@open-rpc/meta-schema";
 
 export const generateMethodHandler = (
-  method: types.MethodObject,
+  method: MethodObject,
   validator: MethodCallValidator,
 ) => {
   return async (args: any, cb: any) => {

@@ -13,8 +13,8 @@ const server = async (protocol: string, port: number | string, schemaLocation: a
     openrpcDocument,
     transportConfigs: [
       {
+        options: { port: 8002 } as THTTPServerTransportOptions,
         type: "HTTPTransport" as TTransportNames,
-        options: { port: 8002 } as THTTPServerTransportOptions
       },
     ],
   };

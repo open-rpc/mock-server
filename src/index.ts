@@ -1,28 +1,25 @@
-import * as jayson from "jayson";
 import { parseOpenRPCDocument } from "@open-rpc/schema-utils-js";
-import { generateMethodMapping } from "./generate-method-mapping";
-import cors from "cors";
-import { json as jsonParser } from "body-parser";
-import connect, { HandleFunction } from "connect";
-import { RequestHandler } from "express-serve-static-core";
 import { OpenRPC } from "@open-rpc/meta-schema";
+import { Server } from "@open-rpc/server-js";
+import { THTTPServerTransportOptions } from "@open-rpc/server-js/build/transports/http";
+import { TTransportNames } from "@open-rpc/server-js/build/transports";
+import { IMockModeSettings } from "@open-rpc/server-js/build/router";
 
 const server = async (protocol: string, port: number | string, schemaLocation: any) => {
-  const app = connect();
-  const schema = await parseOpenRPCDocument(schemaLocation) as OpenRPC;
-  const methods = {
-    ...generateMethodMapping(schema),
-    "rpc.discover": (args: any, cb: any) => {
-      cb(null, schema);
-    },
-  };
-  const jsonRpcServer = new jayson.Server(methods);
-  const corsMiddleware = cors({ origin: "*" }) as RequestHandler;
+  const openrpcDocument = await parseOpenRPCDocument(schemaLocation) as OpenRPC;
 
-  app.use(cors({ origin: "*" }) as HandleFunction);
-  app.use(jsonParser());
-  app.use(jsonRpcServer.middleware() as unknown as HandleFunction);
-  app.listen(port);
+  const options = {
+    methodMapping: { mockMode: true } as IMockModeSettings,
+    openrpcDocument,
+    transportConfigs: [
+      {
+        type: "HTTPTransport" as TTransportNames,
+        options: { port: 8002 } as THTTPServerTransportOptions
+      },
+    ],
+  };
+
+  return new Server(options);
 };
 
 module.exports = server;

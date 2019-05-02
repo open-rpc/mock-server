@@ -6,7 +6,7 @@ program
   .version(require('./get-version'))
   .option('-d, --document [openrpcDocument]', 'JSON string or a Path/Url pointing to an OpenRPC Schema')
   .action(() => {
-    server(program.openrpcDocument)
+    server("http", "8001", program.document)
       .catch((e) => {
         console.error(e);
         process.exit(1);

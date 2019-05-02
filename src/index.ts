@@ -22,4 +22,4 @@ const server = async (protocol: string, port: number | string, schemaLocation: a
   return new Server(options);
 };
 
-module.exports = server;
+export default server;

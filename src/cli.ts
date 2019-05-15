@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 import program = require("commander");
-import orpcGenerator from "./";
+import server from "./";
 import { parseOpenRPCDocument } from "@open-rpc/schema-utils-js";
 import { OpenRPC } from "@open-rpc/meta-schema";
 
-const version = require("../../package.json").version; // tslint:disable-line
+const version = require("../package.json").version; // tslint:disable-line
 
 program
   .version(version, "-v, --version")

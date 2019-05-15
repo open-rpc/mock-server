@@ -25,9 +25,9 @@ program
     }
 
     try {
-      await server("http", "8001", openrpcDocument)
+      server("http", "8001", openrpcDocument).start();
     } catch (e) {
-      console.error(e);
+      console.error(e);// tslint:disable-line
       process.exit(1);
     }
   })

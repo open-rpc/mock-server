@@ -15,9 +15,9 @@ program
     "./openrpc.json",
   )
   .option(
-    "-p, --port [port]",
+    "-p, --port <number>",
     "port to start from",
-    3333,
+    parseInt,
   )
   .action(async () => {
     let openrpcDocument: OpenRPC;
@@ -30,7 +30,7 @@ program
     }
 
     try {
-      server(3333, openrpcDocument).start();
+      server(program.port || 3333, openrpcDocument).start();
     } catch (e) {
       console.error(e);// tslint:disable-line
       process.exit(1);

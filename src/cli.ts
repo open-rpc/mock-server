@@ -14,6 +14,11 @@ program
     "JSON string or a Path/Url pointing to an open rpc schema",
     "./openrpc.json",
   )
+  .option(
+    "-p, --port [port]",
+    "port to start from",
+    3333,
+  )
   .action(async () => {
     let openrpcDocument: OpenRPC;
     try {
@@ -25,7 +30,7 @@ program
     }
 
     try {
-      server("http", "8001", openrpcDocument).start();
+      server(3333, openrpcDocument).start();
     } catch (e) {
       console.error(e);// tslint:disable-line
       process.exit(1);

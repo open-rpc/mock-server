@@ -4,7 +4,7 @@ import { THTTPServerTransportOptions } from "@open-rpc/server-js/build/src/trans
 import { TTransportNames } from "@open-rpc/server-js/build/src/transports";
 import { IMockModeSettings } from "@open-rpc/server-js/build/src/router";
 
-const server = (protocol: string, port: number | string, openrpcDocument: OpenRPC) => {
+const server = (port: number, openrpcDocument: OpenRPC) => {
 
   const options = {
     methodMapping: { mockMode: true } as IMockModeSettings,
@@ -13,7 +13,7 @@ const server = (protocol: string, port: number | string, openrpcDocument: OpenRP
       {
         options: {
           middleware: [],
-          port: 8002,
+          port,
         } as THTTPServerTransportOptions,
         type: "HTTPTransport" as TTransportNames,
       },

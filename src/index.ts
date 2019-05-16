@@ -1,23 +1,21 @@
-import { parseOpenRPCDocument } from "@open-rpc/schema-utils-js";
 import { OpenRPC } from "@open-rpc/meta-schema";
-import { Server } from "@open-rpc/server-js";
-import { THTTPServerTransportOptions } from "@open-rpc/server-js/build/transports/http";
-import { TTransportNames } from "@open-rpc/server-js/build/transports";
-import { IMockModeSettings } from "@open-rpc/server-js/build/router";
+import { Server, IServerOptions } from "@open-rpc/server-js";
 
-const server = async (protocol: string, port: number | string, schemaLocation: any) => {
-  const openrpcDocument = await parseOpenRPCDocument(schemaLocation) as OpenRPC;
+const server = (port: number, openrpcDocument: OpenRPC) => {
 
   const options = {
-    methodMapping: { mockMode: true } as IMockModeSettings,
+    methodMapping: { mockMode: true },
     openrpcDocument,
     transportConfigs: [
       {
-        options: { port: 8002 } as THTTPServerTransportOptions,
-        type: "HTTPTransport" as TTransportNames,
+        options: {
+          middleware: [],
+          port,
+        },
+        type: "HTTPTransport",
       },
     ],
-  };
+  } as IServerOptions;
 
   return new Server(options);
 };

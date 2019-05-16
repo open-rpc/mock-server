@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "start": "./bin/cli.js",
-    "test": "npm run test:lint && npm run test:unit",
+    "test": "npm run build && npm run test:lint && npm run test:unit",
     "test:lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
     "test:unit": "jest --coverage",
     "build": "tsc",

@@ -7,7 +7,7 @@ const makePrefix = (sluggedDocumentTitle: string, version: string) => {
   return `${_.camelCase(sluggedDocumentTitle)}-${version}-`;
 }
 
-const serviceMode = (port: number, openrpcDocument: OpenRPC) => {
+export const serviceMode = (port: number, openrpcDocument: OpenRPC) => {
   const options = {
     openrpcDocument,
     transportConfigs: [

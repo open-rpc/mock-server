@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import program = require("commander");
-import server from "./";
+import server, { serviceMode } from "./";
 import { parseOpenRPCDocument } from "@open-rpc/schema-utils-js";
 import { OpenRPC } from "@open-rpc/meta-schema";
 
@@ -25,7 +25,11 @@ program
     "local",
   )
   .action(async () => {
-    if (program.)
+    if (program.mode === "service") {
+      const serviceModeDoc = await parseOpenRPCDocument("../service-mode-openrpc.json");
+      return serviceMode(program.port, serviceModeDoc).start();
+    }
+
     let openrpcDocument: OpenRPC;
     try {
       openrpcDocument = await parseOpenRPCDocument(program.document);

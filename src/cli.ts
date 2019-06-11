@@ -10,7 +10,7 @@ const version = require("../package.json").version; // tslint:disable-line
 program
   .version(version, "-v, --version")
   .option(
-    "-d, --document [openrpcDocument]",
+    "-d, --document <OpenRPC>",
     "JSON string or a Path/Url pointing to an open rpc schema",
     "./openrpc.json",
   )
@@ -19,7 +19,13 @@ program
     "port to start from",
     parseInt,
   )
+  .option(
+    "-m, --mode <string>",
+    "use this option to run mock-server as a service.",
+    "local",
+  )
   .action(async () => {
+    if (program.)
     let openrpcDocument: OpenRPC;
     try {
       openrpcDocument = await parseOpenRPCDocument(program.document);

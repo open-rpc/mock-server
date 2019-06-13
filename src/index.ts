@@ -2,10 +2,32 @@ import { OpenRPC, MethodObject } from "@open-rpc/meta-schema";
 import { Server, IServerOptions, Router } from "@open-rpc/server-js";
 import _ from "lodash";
 import { IMethodMapping } from "@open-rpc/server-js/build/router";
+import { parseOpenRPCDocument } from "@open-rpc/schema-utils-js";
 
 const makePrefix = (sluggedDocumentTitle: string, version: string) => {
   return `${_.camelCase(sluggedDocumentTitle)}-${version}-`;
-}
+};
+
+const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMapping => {
+  return {
+    mock: async (openrpcDocument: OpenRPC) => {
+      const prefix = makePrefix(openrpcDocument.info.title, openrpcDocument.info.version);
+      const prefixedOpenRPCDocument = {
+        ...openrpcDocument,
+        methods: _.map(
+          openrpcDocument.methods,
+          (method: MethodObject): MethodObject => ({ ...method, name: `${prefix}${method.name}` })),
+      } as OpenRPC;
+
+      const parsedDoc = await parseOpenRPCDocument(prefixedOpenRPCDocument);
+      const router = s.addRouter(prefixedOpenRPCDocument, { mockMode: true });
+
+      setTimeout(() => s.removeRouter(router), 15 * 60 * 1000);
+
+      return prefix.slice(0, -1);
+    },
+  };
+};
 
 export const serviceMode = (port: number, openrpcDocument: OpenRPC) => {
   const options = {
@@ -15,16 +37,15 @@ export const serviceMode = (port: number, openrpcDocument: OpenRPC) => {
         options: {
           middleware: [
             (req: any, res: any, next: () => void) => {
-              if (url === "/") { return next(); }
+              if (req.url === "/") { return next(); }
 
-              const url: string = req.url;
-              const [title, version] = url.split("/");
+              const url: string = req.url.replace("/", "");
+              const [title, version] = url.split("-");
               const prefix = makePrefix(title, version);
 
-              const body: any = req.body; // should apply json-rpc types to this
-              body.method = `${prefix}${body.method}`;
+              req.body.method = `${prefix}${req.body.method}`;
               return next();
-            }
+            },
           ],
           port,
         },
@@ -35,24 +56,7 @@ export const serviceMode = (port: number, openrpcDocument: OpenRPC) => {
 
   const serviceServer = new Server(options);
 
-  const methodMapping = {
-    mock: (openrpcDocument: OpenRPC) => {
-      // 1 - change method names to have prefix
-      const prefix = makePrefix(openrpcDocument.info.title, openrpcDocument.info.version);
-      const prefixedOpenRPCDocument = {
-        ...openrpcDocument,
-        methods: _.map(openrpcDocument.methods, (method: MethodObject): MethodObject => ({ ...method, name: `${prefix}${method.name}` })),
-      } as OpenRPC;
-
-      // 2 - create a router with the prefixed document using mockMode
-      // 3 - add the router to the current server
-      const router = serviceServer.addRouter(prefixedOpenRPCDocument, { mockMode: true });
-
-      // 4 - setTimeout 15m and remove the router
-      setTimeout(() => serviceServer.removeRouter(router), 15 * 60 * 1000);
-    }
-  } as IMethodMapping;
-
+  const methodMapping = createServiceMethodMapping(serviceServer, openrpcDocument);
   serviceServer.addRouter(openrpcDocument, methodMapping);
 
   return serviceServer;

@@ -26,8 +26,8 @@ program
   )
   .action(async () => {
     if (program.mode === "service") {
-      const serviceModeDoc = await parseOpenRPCDocument("../service-mode-openrpc.json");
-      return serviceMode(program.port, serviceModeDoc).start();
+      const serviceModeDoc = await parseOpenRPCDocument("./service-mode-openrpc.json");
+      return serviceMode(program.port || 3333, serviceModeDoc).start();
     }
 
     let openrpcDocument: OpenRPC;

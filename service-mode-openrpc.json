@@ -18,7 +18,7 @@
   "methods": [
     {
       "name": "mock",
-      "description": "Provides a mock server for the given OpenRPC document.",
+      "description": "Provides a mock server for the given OpenRPC document. This mock lasts 15 minutes before being destroyed.",
       "summary": "Provides a mock server for the given OpenRPC document.",
       "params": [
         {

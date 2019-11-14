@@ -16,17 +16,16 @@ Provides a mock JSON-RPC API with [Service Discovery](https://github.com/open-rp
 
 ## Install
 
-### Dependencies
-
-- at least node `v10.15.0`
-- at least npm `v6.4.1`
-- [VS Code](https://code.visualstudio.com/) with the [open-rpc code extension](https://marketplace.visualstudio.com/items?itemName=OPEN-RPC.OPEN-RPC)
-- [Postman](https://www.getpostman.com/)
-
 Installing the _open-rpc-mock-server_ in your local project.
 
 ```bash
 npm install --save @open-rpc/mock-server
+```
+
+or install it globally
+
+```bash
+npm install -g @open-rpc/mock-server
 ```
 
 ## Usage

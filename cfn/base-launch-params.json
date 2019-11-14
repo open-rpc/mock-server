@@ -1,6 +1,6 @@
 [
   {
     "ParameterKey": "ApplicationName",
-    "ParameterValue": "jade-service-runner"
+    "ParameterValue": "open-rpc-mock-server"
   }
 ]

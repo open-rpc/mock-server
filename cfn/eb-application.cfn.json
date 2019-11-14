@@ -1,0 +1,23 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "ApplicationName": {
+      "Description": "The name of the Elastic Beanstalk Application",
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "EBApplication": {
+      "Type": "AWS::ElasticBeanstalk::Application",
+      "Properties": {
+        "ApplicationName": { "Ref": "ApplicationName" },
+        "Description": { "Ref": "ApplicationName" }
+      }
+    }
+  },
+  "Outputs": {
+    "Application": {
+      "Value": { "Ref": "EBApplication" }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+global:
+  application_name: open-rpc-mock-server
+  default_ec2_keyname: open-rpc-deployer 
+  default_region: us-west-2
+  sc: git

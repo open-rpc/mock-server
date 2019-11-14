@@ -25,6 +25,6 @@
   },
   {
     "ParameterKey": "VolumeSize",
-    "ParameterValue": 100
+    "ParameterValue": "100"
   }
 ]

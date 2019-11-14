@@ -213,7 +213,7 @@
           {
             "Namespace": "aws:elasticbeanstalk:container:nodejs",
             "OptionName": "NodeCommand",
-            "Value": "npm run startaws"
+            "Value": "npm run start -- --mode service"
           },
           {
             "Namespace": "aws:elasticbeanstalk:container:nodejs",

@@ -120,8 +120,6 @@ jobs:
           command: eb deploy open-rpc-mock-server-production
           no_output_timeout: '30m'
 
-
-
 workflows:
   version: 2
   analysis:

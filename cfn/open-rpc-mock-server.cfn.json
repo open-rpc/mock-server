@@ -169,7 +169,7 @@
             "Value": {
               "Ref": "VolumeSize"
             }
-          }
+          },
           {
             "Namespace": "aws:elb:loadbalancer",
             "OptionName": "SSLCertificateId",

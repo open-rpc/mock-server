@@ -30,6 +30,11 @@ npm install -g @open-rpc/mock-server
 
 ## Usage
 
+If you installed it globally:
+```bash
+open-rpc-mock-server -d my-open-rpc-document.json
+```
+
 Optimize usage by adding script for _open-rpc-mock-server_ in `package.json`.
 
 ```json

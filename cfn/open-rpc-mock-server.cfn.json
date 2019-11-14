@@ -29,6 +29,7 @@
     },
     "VolumeSize": {
       "Description": "Size of the elastic block store that you want for each ec2 instance",
+      "Type": "String",
       "Default": "50"
     }
   },

@@ -1,0 +1,30 @@
+[
+  {
+    "ParameterKey": "ApplicationName",
+    "ParameterValue": "open-rpc-mock-server"
+  },
+  {
+    "ParameterKey": "KeyPairName",
+    "ParameterValue": "open-rpc-deployer"
+  },
+  {
+    "ParameterKey": "InstanceType",
+    "ParameterValue": "t2.large"
+  },
+  {
+    "ParameterKey": "DomainName",
+    "ParameterValue": "mock.open-rpc.org"
+  },
+  {
+    "ParameterKey": "HostedZoneId",
+    "ParameterValue": "ZO6W467OLV7WC"
+  },
+  {
+    "ParameterKey": "EnvironmentName",
+    "ParameterValue": "production"
+  },
+  {
+    "ParameterKey": "VolumeSize",
+    "ParameterValue": 100
+  }
+]

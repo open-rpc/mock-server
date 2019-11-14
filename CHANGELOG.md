@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/open-rpc/mock-server/compare/1.2.0...1.2.1) (2019-11-14)
+
+
+### Bug Fixes
+
+* broken build ([2b0d164](https://github.com/open-rpc/mock-server/commit/2b0d1646bf1dbb2e94c086cda1bdd2944b64c844))
+
 # [1.2.0](https://github.com/open-rpc/mock-server/compare/1.1.1...1.2.0) (2019-11-14)
 
 

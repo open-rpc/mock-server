@@ -117,7 +117,7 @@ jobs:
             sudo pip install awsebcli --upgrade
       - run:
           name: Deploying Production
-          command: eb deploy jade-service-runner-production
+          command: eb deploy open-rpc-mock-server-production
           no_output_timeout: '30m'
 
 

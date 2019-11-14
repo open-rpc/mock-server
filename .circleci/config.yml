@@ -128,7 +128,7 @@ workflows:
           filters: *filter-only-semantic-pr
       - build:
           filters: *filter-only-semantic-pr
- release:
+  release:
     jobs:
       - build:
           filters: *filter-only-master

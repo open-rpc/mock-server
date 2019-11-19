@@ -1,3 +1,12 @@
+## [1.2.2](https://github.com/open-rpc/mock-server/compare/1.2.1...1.2.2) (2019-11-19)
+
+
+### Bug Fixes
+
+* dont change deps during release ([46b1c87](https://github.com/open-rpc/mock-server/commit/46b1c87f74f16fc3b6a5ed69aad8a6309c463d0a))
+* only download sem rel deps in CI ([7c25046](https://github.com/open-rpc/mock-server/commit/7c250466cb5dd617031ed7ddbb2cf8ebaa63a243))
+* update package lock ([f586061](https://github.com/open-rpc/mock-server/commit/f5860612ad2bbe94a9646c8b7648051f8e8de02c))
+
 ## [1.2.1](https://github.com/open-rpc/mock-server/compare/1.2.0...1.2.1) (2019-11-14)
 
 

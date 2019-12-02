@@ -30,7 +30,7 @@
     "watch:test": "jest --watch"
   },
   "dependencies": {
-    "@open-rpc/meta-schema": "1.5.3",
+    "@open-rpc/meta-schema": "1.5.4",
     "@open-rpc/schema-utils-js": "1.11.6",
     "@open-rpc/server-js": "^1.5.1",
     "lodash": "^4.17.11"

@@ -1,4 +1,4 @@
-import { OpenRPC, MethodObject } from "@open-rpc/meta-schema";
+import { OpenrpcDocument as OpenRPC, MethodObject } from "@open-rpc/meta-schema";
 import { Server, IServerOptions, Router } from "@open-rpc/server-js";
 import _ from "lodash";
 import { IMethodMapping } from "@open-rpc/server-js/build/router";

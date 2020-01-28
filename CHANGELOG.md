@@ -1,3 +1,12 @@
+## [1.2.3](https://github.com/open-rpc/mock-server/compare/1.2.2...1.2.3) (2020-01-28)
+
+
+### Bug Fixes
+
+* meta-schema updates ([12703a6](https://github.com/open-rpc/mock-server/commit/12703a6a722e982121c180c954f72350df7db15f))
+* regen package-lock ([37971e4](https://github.com/open-rpc/mock-server/commit/37971e46639ba8154d9642851400fd0adf0c17aa))
+* update deps ([28d55f9](https://github.com/open-rpc/mock-server/commit/28d55f9535741c14bd41e2df25718ae2c219a895))
+
 ## [1.2.2](https://github.com/open-rpc/mock-server/compare/1.2.1...1.2.2) (2019-11-19)
 
 

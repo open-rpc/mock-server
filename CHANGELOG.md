@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/open-rpc/mock-server/compare/1.2.3...1.2.4) (2020-01-31)
+
+
+### Bug Fixes
+
+* service mode broken when installed globally ([9746373](https://github.com/open-rpc/mock-server/commit/97463730662b3e403c8c2d8f26a4d9ff67be7d80))
+
 ## [1.2.3](https://github.com/open-rpc/mock-server/compare/1.2.2...1.2.3) (2020-01-28)
 
 

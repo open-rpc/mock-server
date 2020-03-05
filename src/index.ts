@@ -25,7 +25,7 @@ const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMappin
       const parsedDoc = await parseOpenRPCDocument(prefixedOpenRPCDocument);
       const router = s.addRouter(parsedDoc, { mockMode: true });
 
-      if (exNames.indexOf(openrpcDocument.info.title) === -1) {
+      if (exNames.indexOf(makePrefix(openrpcDocument.info.title, openrpcDocument.info.version)) === -1) {
         setTimeout(() => s.removeRouter(router), 15 * 60 * 1000);
       }
 

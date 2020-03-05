@@ -1,12 +1,15 @@
-import { OpenrpcDocument as OpenRPC, MethodObject } from "@open-rpc/meta-schema";
+import { OpenrpcDocument as OpenRPC, MethodObject, OpenrpcDocument } from "@open-rpc/meta-schema";
 import { Server, IServerOptions, Router } from "@open-rpc/server-js";
 import _ from "lodash";
 import { IMethodMapping } from "@open-rpc/server-js/build/router";
 import { parseOpenRPCDocument } from "@open-rpc/schema-utils-js";
+import examples from "@open-rpc/examples";
 
 const makePrefix = (sluggedDocumentTitle: string, version: string) => {
   return `${_.camelCase(sluggedDocumentTitle)}-${version}-`;
 };
+
+const exNames = Object.values(examples).map((doc: OpenrpcDocument) => makePrefix(doc.info.title, doc.info.version));
 
 const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMapping => {
   return {
@@ -20,9 +23,11 @@ const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMappin
       } as OpenRPC;
 
       const parsedDoc = await parseOpenRPCDocument(prefixedOpenRPCDocument);
-      const router = s.addRouter(prefixedOpenRPCDocument, { mockMode: true });
+      const router = s.addRouter(parsedDoc, { mockMode: true });
 
-      setTimeout(() => s.removeRouter(router), 15 * 60 * 1000);
+      if (exNames.indexOf(openrpcDocument.info.title) === -1) {
+        setTimeout(() => s.removeRouter(router), 15 * 60 * 1000);
+      }
 
       return prefix.slice(0, -1);
     },

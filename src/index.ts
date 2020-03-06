@@ -28,6 +28,8 @@ const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMappin
       if (exNames.indexOf(makePrefix(openrpcDocument.info.title, openrpcDocument.info.version)) === -1) {
         setTimeout(() => s.removeRouter(router), 15 * 60 * 1000);
       }
+     
+      console.log("New service added: ", prefix); //tslint:disable-line
 
       return prefix.slice(0, -1);
     },
@@ -42,6 +44,9 @@ export const serviceMode = (port: number, openrpcDocument: OpenRPC) => {
         options: {
           middleware: [
             (req: any, res: any, next: () => void) => {
+              console.log("req recieved:"); //tslint:disable-line
+              console.log(`  url: ${req.url}`); //tslint:disable-line
+              console.log(`  url: ${req.body}`); //tslint:disable-line
               if (req.url === "/") { return next(); }
 
               const url: string = req.url.replace("/", "");

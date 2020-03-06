@@ -41,6 +41,7 @@ program
 
     try {
       server(program.port || 3333, openrpcDocument).start();
+      console.log("Server Started"); //tslint:disable-line
     } catch (e) {
       console.error(e);// tslint:disable-line
       process.exit(1);

@@ -63,7 +63,7 @@ export const serviceMode = (port: number, openrpcDocument: OpenRPC) => {
 
   const methodMapping = createServiceMethodMapping(serviceServer, openrpcDocument);
   serviceServer.addRouter(openrpcDocument, methodMapping);
-
+  console.log(`Created Server with options: port - ${port}`); // tslint:disable-line
   return serviceServer;
 };
 

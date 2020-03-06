@@ -1,3 +1,12 @@
+## [1.3.1](https://github.com/open-rpc/mock-server/compare/1.3.0...1.3.1) (2020-03-06)
+
+
+### Bug Fixes
+
+* add console logging ([4f0bd2c](https://github.com/open-rpc/mock-server/commit/4f0bd2c2eb4d520ae3999ddf12ff11596346ce75))
+* more logging ([04ac7d8](https://github.com/open-rpc/mock-server/commit/04ac7d8c4f8f74e9e5d9537a0474f3f48b0bbcdf))
+* run server on 8081 ([dc6675e](https://github.com/open-rpc/mock-server/commit/dc6675e95c16bdd4e366ec7b05e4d3868ebd61e8))
+
 # [1.3.0](https://github.com/open-rpc/mock-server/compare/1.2.4...1.3.0) (2020-03-06)
 
 

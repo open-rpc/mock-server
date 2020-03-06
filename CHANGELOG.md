@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/open-rpc/mock-server/compare/1.2.4...1.3.0) (2020-03-06)
+
+
+### Bug Fixes
+
+* must use prefixed title ([0e74a2c](https://github.com/open-rpc/mock-server/commit/0e74a2ce97910a3a6f453537458a318a65b380b1))
+* startaws ([673d345](https://github.com/open-rpc/mock-server/commit/673d345b284ac46bf1a9ac29ab022df2bcab2401))
+* update package lock ([dd9ea23](https://github.com/open-rpc/mock-server/commit/dd9ea23caf261aa163e4f3fc6b54d2972406ed0e))
+
+
+### Features
+
+* allow serving examples forever ([5340e95](https://github.com/open-rpc/mock-server/commit/5340e9504771ff4198b1d091b4e62d4e71e45ba7))
+
 ## [1.2.4](https://github.com/open-rpc/mock-server/compare/1.2.3...1.2.4) (2020-01-31)
 
 

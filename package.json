@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "start": "./build/cli.js",
-    "startaws": "npm run build && node ./build/cli.js -m service -p 8001",
+    "startaws": "npm run build && node ./build/cli.js -m service -p 8081",
     "test": "npm run build && npm run test:lint && npm run test:unit",
     "test:lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
     "test:unit": "jest --coverage",

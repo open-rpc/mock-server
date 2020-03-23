@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/open-rpc/mock-server/compare/1.3.1...1.3.2) (2020-03-23)
+
+
+### Bug Fixes
+
+* add node env ([6db14e9](https://github.com/open-rpc/mock-server/commit/6db14e9ca0f5dde9a75979a5b776c194774c31b8))
+
 ## [1.3.1](https://github.com/open-rpc/mock-server/compare/1.3.0...1.3.1) (2020-03-06)
 
 

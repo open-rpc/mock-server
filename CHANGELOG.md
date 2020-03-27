@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/open-rpc/mock-server/compare/1.4.0...1.4.1) (2020-03-27)
+
+
+### Bug Fixes
+
+* by-name support working now ([4676a36](https://github.com/open-rpc/mock-server/commit/4676a360337db1968ca93f22f7c4b5750915b958))
+
 # [1.4.0](https://github.com/open-rpc/mock-server/compare/1.3.3...1.4.0) (2020-03-27)
 
 

@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/open-rpc/mock-server/compare/1.3.3...1.4.0) (2020-03-27)
+
+
+### Features
+
+* add rpc.discover to added services ([21dcb20](https://github.com/open-rpc/mock-server/commit/21dcb209c37c6fceaeb9f414ef6993f3b76da507)), closes [#232](https://github.com/open-rpc/mock-server/issues/232)
+
 ## [1.3.3](https://github.com/open-rpc/mock-server/compare/1.3.2...1.3.3) (2020-03-27)
 
 

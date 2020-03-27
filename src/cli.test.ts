@@ -25,18 +25,20 @@ describe("cli", () => {
   it("can be run with an example", async (done) => {
     const childProc = exec(`node ./build/cli.js -d '${JSON.stringify(examples.simpleMath)}'`);
 
-    const req = http.request(options, (res: any) => {
-      expect(res.statusCode).toBe(200);
+    setTimeout(() => {
+      const req = http.request(options, (res: any) => {
+        expect(res.statusCode).toBe(200);
 
-      res.on("data", (d: any) => {
-        expect(JSON.parse(d).result).toBe(4);
-        childProc.kill("SIGHUP");
-        done();
+        res.on("data", (d: any) => {
+          expect(JSON.parse(d).result).toBe(4);
+          childProc.kill("SIGHUP");
+          done();
+        });
       });
-    });
 
-    req.on("error", (error: any) => { throw error; });
-    req.write(data);
-    req.end();
+      req.on("error", (error: any) => { throw error; });
+      req.write(data);
+      req.end();
+    }, 1000);
   });
 });

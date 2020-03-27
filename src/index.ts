@@ -11,6 +11,8 @@ const makePrefix = (sluggedDocumentTitle: string, version: string) => {
 
 const exNames = Object.values(examples).map((doc: OpenrpcDocument) => makePrefix(doc.info.title, doc.info.version));
 
+const prefixToDocumentMap: { [k: string]: OpenrpcDocument } = {};
+
 const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMapping => {
   return {
     mock: async (openrpcDocument: OpenRPC) => {
@@ -22,7 +24,10 @@ const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMappin
           (method: MethodObject): MethodObject => ({ ...method, name: `${prefix}${method.name}` })),
       } as OpenRPC;
 
+      prefixedOpenRPCDocument.methods.push();
+
       const parsedDoc = await parseOpenRPCDocument(prefixedOpenRPCDocument);
+      prefixToDocumentMap[prefix] = openrpcDocument;
       const router = s.addRouter(parsedDoc, { mockMode: true });
 
       if (exNames.indexOf(makePrefix(openrpcDocument.info.title, openrpcDocument.info.version)) === -1) {
@@ -44,15 +49,22 @@ export const serviceMode = (port: number, openrpcDocument: OpenRPC) => {
         options: {
           middleware: [
             (req: any, res: any, next: () => void) => {
-              console.log("req recieved:"); //tslint:disable-line
-              console.log(`  url: ${req.url}`); //tslint:disable-line
-              console.log(`  url: ${req.body}`); //tslint:disable-line
               if (req.url === "/") { return next(); }
 
               const url: string = req.url.replace("/", "");
               const [title, version] = url.split("-");
               const prefix = makePrefix(title, version);
 
+              if (req.body.method === "rpc.discover") {
+                res.setHeader("Content-Type", "application/json");
+                const response = {
+                  id: req.body.id,
+                  jsonrpc: "2.0",
+                  result: prefixToDocumentMap[prefix],
+                };
+                res.end(JSON.stringify(response));
+                return;
+              }
               req.body.method = `${prefix}${req.body.method}`;
               return next();
             },

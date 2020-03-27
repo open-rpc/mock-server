@@ -21,7 +21,7 @@
     ".node-version"
   ],
   "scripts": {
-    "start": "./build/cli.js",
+    "start": "npm run build && node ./build/cli.js",
     "startaws": "npm run build && node ./build/cli.js -m service -p 8081",
     "test": "npm run test:lint && npm run build && npm run test:unit",
     "test:lint": "tslint -c tslint.json 'src/**/*.ts' --fix",

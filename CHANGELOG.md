@@ -1,3 +1,14 @@
+## [1.3.3](https://github.com/open-rpc/mock-server/compare/1.3.2...1.3.3) (2020-03-27)
+
+
+### Bug Fixes
+
+* add a small timeout ([df1686f](https://github.com/open-rpc/mock-server/commit/df1686f06c9a1428ea64372d0fd85318e0e57021))
+* test improvement ([e3ac7ca](https://github.com/open-rpc/mock-server/commit/e3ac7cafc566a6f52aeae346bd6c72b007535433))
+* try loopback instead of localhost ([30791ed](https://github.com/open-rpc/mock-server/commit/30791edce7cc2e5aa98b3fc1a8215b0f2aefd7a4))
+* update npm packages ([3b0f590](https://github.com/open-rpc/mock-server/commit/3b0f590b60a11273879d41c8b004df1fa59b55bd))
+* update open rpc tooling deps ([94186ae](https://github.com/open-rpc/mock-server/commit/94186ae3501421fe0d0dc904320cef51092d96c6))
+
 ## [1.3.2](https://github.com/open-rpc/mock-server/compare/1.3.1...1.3.2) (2020-03-23)
 
 

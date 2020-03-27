@@ -28,7 +28,7 @@ const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMappin
       if (exNames.indexOf(makePrefix(openrpcDocument.info.title, openrpcDocument.info.version)) === -1) {
         setTimeout(() => s.removeRouter(router), 15 * 60 * 1000);
       }
-     
+
       console.log("New service added: ", prefix); //tslint:disable-line
 
       return prefix.slice(0, -1);

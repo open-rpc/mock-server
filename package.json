@@ -31,9 +31,9 @@
     "watch:test": "jest --watch"
   },
   "dependencies": {
-    "@open-rpc/schema-utils-js": "^1.12.2",
-    "@open-rpc/server-js": "^1.5.2",
     "@open-rpc/examples": "^1.4.0",
+    "@open-rpc/schema-utils-js": "^1.12.2",
+    "@open-rpc/server-js": "^1.5.4",
     "lodash": "^4.17.11"
   },
   "devDependencies": {

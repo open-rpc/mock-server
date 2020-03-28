@@ -23,8 +23,7 @@
   "scripts": {
     "start": "npm run build && node ./build/cli.js",
     "startaws": "npm run build && node ./build/cli.js -m service -p 8081",
-    "test": "npm run test:lint && npm run build && npm run test:unit",
-    "test:lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
+    "test": "npm run build && npm run test:unit",
     "test:unit": "jest --coverage",
     "build": "tsc && cp service-mode-openrpc.json build/.",
     "watch:build": "tsc --watch",
@@ -45,7 +44,6 @@
     "@types/lodash": "^4.14.123",
     "jest": "^25.1.0",
     "ts-jest": "^25.0.0",
-    "tslint": "^6.0.0",
     "typescript": "^3.4.5"
   }
 }

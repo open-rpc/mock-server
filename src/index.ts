@@ -1,7 +1,7 @@
 import { OpenrpcDocument as OpenRPC, MethodObject, OpenrpcDocument } from "@open-rpc/meta-schema";
-import { Server, IServerOptions, Router } from "@open-rpc/server-js";
+import { Server, ServerOptions } from "@open-rpc/server-js";
 import _ from "lodash";
-import { IMethodMapping } from "@open-rpc/server-js/build/router";
+import { MethodMapping } from "@open-rpc/server-js/build/router";
 import { parseOpenRPCDocument } from "@open-rpc/schema-utils-js";
 import examples from "@open-rpc/examples";
 
@@ -13,7 +13,7 @@ const exNames = Object.values(examples).map((doc: OpenrpcDocument) => makePrefix
 
 const prefixToDocumentMap: { [k: string]: OpenrpcDocument } = {};
 
-const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMapping => {
+const createServiceMethodMapping = (s: Server, document: OpenRPC): MethodMapping => {
   return {
     mock: async (openrpcDocument: OpenRPC) => {
       const prefix = makePrefix(openrpcDocument.info.title, openrpcDocument.info.version);
@@ -34,7 +34,7 @@ const createServiceMethodMapping = (s: Server, document: OpenRPC): IMethodMappin
         setTimeout(() => s.removeRouter(router), 15 * 60 * 1000);
       }
 
-      console.log("New service added: ", prefix); //tslint:disable-line
+      console.log("New service added: ", prefix); // eslint-disable-line
 
       return prefix.slice(0, -1);
     },
@@ -74,13 +74,13 @@ export const serviceMode = (port: number, openrpcDocument: OpenRPC) => {
         type: "HTTPTransport",
       },
     ],
-  } as IServerOptions;
+  } as ServerOptions;
 
   const serviceServer = new Server(options);
 
   const methodMapping = createServiceMethodMapping(serviceServer, openrpcDocument);
   serviceServer.addRouter(openrpcDocument, methodMapping);
-  console.log(`Created Server with options: port - ${port}`); // tslint:disable-line
+  console.log(`Created Server with options: port - ${port}`); // eslint-disable-line
   return serviceServer;
 };
 
@@ -98,7 +98,7 @@ const server = (port: number, openrpcDocument: OpenRPC) => {
         type: "HTTPTransport",
       },
     ],
-  } as IServerOptions;
+  } as ServerOptions;
 
   return new Server(options);
 };

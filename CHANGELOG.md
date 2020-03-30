@@ -1,3 +1,16 @@
+# [1.5.0](https://github.com/open-rpc/mock-server/compare/1.4.1...1.5.0) (2020-03-30)
+
+
+### Bug Fixes
+
+* update all the things ([ab74645](https://github.com/open-rpc/mock-server/commit/ab74645b00847b0c4a6b93e32cb1bb3c66f43736))
+* update new open rpc server ([5304003](https://github.com/open-rpc/mock-server/commit/5304003ba01fa216578b3d03d5d27c15c2d3da5f))
+
+
+### Features
+
+* add gh action for es lint ([66c8f51](https://github.com/open-rpc/mock-server/commit/66c8f5134f78a38af0745fa821148d10112d325a))
+
 ## [1.4.1](https://github.com/open-rpc/mock-server/compare/1.4.0...1.4.1) (2020-03-27)
 
 

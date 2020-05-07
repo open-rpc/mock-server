@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/open-rpc/mock-server/compare/1.5.0...1.6.0) (2020-05-07)
+
+
+### Features
+
+* update deps to fix byname issues ([eba0976](https://github.com/open-rpc/mock-server/commit/eba0976da5d3cae57d7441fbb7ca8b510f2c1988))
+
 # [1.5.0](https://github.com/open-rpc/mock-server/compare/1.4.1...1.5.0) (2020-03-30)
 
 

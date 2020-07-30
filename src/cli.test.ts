@@ -22,7 +22,8 @@ const options = {
 };
 
 describe("cli", () => {
-  it("can be run with an example", async (done) => {
+  it("can be run with an example", (done) => {
+    expect.assertions(2);
     const childProc = exec(`node ./build/cli.js -d '${JSON.stringify(examples.simpleMath)}'`);
 
     setTimeout(() => {
@@ -30,8 +31,8 @@ describe("cli", () => {
         expect(res.statusCode).toBe(200);
 
         res.on("data", (d: any) => {
-          expect(JSON.parse(d).result).toBe(4);
           childProc.kill("SIGHUP");
+          expect(JSON.parse(d).result).toBe(4);
           done();
         });
       });

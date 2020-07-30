@@ -13,7 +13,7 @@ describe("cli", () => {
     });
 
     const options = {
-      hostname: "0.0.0.0",
+      hostname: "localhost",
       port: 3333,
       path: "/",
       method: "POST",
@@ -31,7 +31,7 @@ describe("cli", () => {
         res.on("data", (d: any) => {
           expect(JSON.parse(d.toString()).result).toBe(4);
           childProc.kill("SIGHUP");
-          done();
+          setTimeout(done, 2000);
         });
       });
 
@@ -39,7 +39,7 @@ describe("cli", () => {
       req.write(data);
       req.end();
     }, 1000);
-  });
+  }, 10000);
 
   it("can run in service mode", (done) => {
     const childProc = exec(`node ./build/cli.js -m service`);
@@ -68,6 +68,7 @@ describe("cli", () => {
 
         res.on("data", (d: any) => {
           expect(JSON.parse(d.toString()).result).toBe("simpleMath-1.0.0");
+          req.removeAllListeners();
 
           const simpleMathReqBody = JSON.stringify({
             id: 1,
@@ -77,7 +78,7 @@ describe("cli", () => {
           });
 
           const simpleMathReqObj = {
-            hostname: "0.0.0.0",
+            hostname: "localhost",
             port: 3333,
             path: "/simpleMath-1.0.0",
             method: "POST",
@@ -92,7 +93,8 @@ describe("cli", () => {
             insideRes.on("data", (insideD: any) => {
               expect(JSON.parse(insideD.toString()).result).toBe(4);
               childProc.kill("SIGHUP");
-              done();
+              insideReq.removeAllListeners();
+              setTimeout(done, 2000);
             });
           });
 
@@ -105,6 +107,6 @@ describe("cli", () => {
       req.on("error", (error: any) => { throw error; });
       req.write(requestBody);
       req.end();
-    }, 4000);
-  });
+    }, 5000);
+  }, 15000);
 });

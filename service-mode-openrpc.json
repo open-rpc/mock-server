@@ -26,7 +26,10 @@
           "required": true,
           "description": "The OpenRPC Document you want to mock.",
           "summary": "an OpenRPC document to mock",
-          "schema": { "$ref": "#/components/schemas/OpenRPCDocument" }
+          "schema": {
+            "title": "OpenRPC Document",
+            "description": "an open rpc document as defined by https://spec.open-rpc.org."
+          }
         }
       ],
       "result": {

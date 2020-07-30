@@ -67,6 +67,7 @@ describe("cli", () => {
         expect(res.statusCode).toBe(200);
 
         res.on("data", (d: any) => {
+          console.log(d, d.toString(), JSON.parse(d.toString()));
           expect(JSON.parse(d.toString()).result).toBe("simpleMath-1.0.0");
           req.removeAllListeners();
 

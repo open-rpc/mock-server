@@ -42,7 +42,7 @@ describe("cli", () => {
   }, 10000);
 
   it("can run in service mode", (done) => {
-    const childProc = exec(`node ./build/cli.js -m service`);
+    const childProc = exec(`node ./build/cli.js -m service -p 3334`);
 
     const requestBody = JSON.stringify({
       id: 1,
@@ -53,7 +53,7 @@ describe("cli", () => {
 
     const reqObj = {
       hostname: "0.0.0.0",
-      port: 3333,
+      port: 3334,
       path: "/",
       method: "POST",
       headers: {
@@ -71,7 +71,7 @@ describe("cli", () => {
           req.removeAllListeners();
 
           const simpleMathReqBody = JSON.stringify({
-            id: 1,
+            id: 2,
             jsonrpc: "2.0",
             method: "addition",
             params: [2, 2],
@@ -79,7 +79,7 @@ describe("cli", () => {
 
           const simpleMathReqObj = {
             hostname: "localhost",
-            port: 3333,
+            port: 3334,
             path: "/simpleMath-1.0.0",
             method: "POST",
             headers: {
@@ -108,5 +108,5 @@ describe("cli", () => {
       req.write(requestBody);
       req.end();
     }, 5000);
-  }, 15000);
+  }, 20000);
 });

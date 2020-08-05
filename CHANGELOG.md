@@ -1,3 +1,19 @@
+# [1.7.0](https://github.com/open-rpc/mock-server/compare/1.6.0...1.7.0) (2020-08-05)
+
+
+### Bug Fixes
+
+* debug logs ([abae802](https://github.com/open-rpc/mock-server/commit/abae802ee43b61acb0a49df2e75839dd28f3b6a2))
+* improve testing and coverage ([975f424](https://github.com/open-rpc/mock-server/commit/975f42429ad306b9c56ec8275fd44d1fd66cab2a))
+* increase timeouts on tests ([3193383](https://github.com/open-rpc/mock-server/commit/31933838816599b28fd4128dc051f21ea1c1cef0))
+* remove logs ([eb294f7](https://github.com/open-rpc/mock-server/commit/eb294f7eeb50f404a1eb0331fc4cfbe657de93bc))
+* switch to different port for second test ([ab96a6a](https://github.com/open-rpc/mock-server/commit/ab96a6a9cc4b984301370773b7396653adbe99ed))
+
+
+### Features
+
+* upgrade deps ([76d1d63](https://github.com/open-rpc/mock-server/commit/76d1d63bf5f4cb3d1d10e85766eb2b7d88a9af34))
+
 # [1.6.0](https://github.com/open-rpc/mock-server/compare/1.5.0...1.6.0) (2020-05-07)
 
 

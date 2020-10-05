@@ -6,8 +6,8 @@
     "type": "git",
     "url": "git+https://github.com/open-rpc/mock-server.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Zachary Belford<belfordz66@gmail.com>",
+  "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/open-rpc/mock-server/issues"
   },
@@ -33,6 +33,7 @@
     "@open-rpc/examples": "^1.6.0",
     "@open-rpc/schema-utils-js": "^1.14.0",
     "@open-rpc/server-js": "^1.8.0",
+    "commander": "^6.1.0",
     "lodash": "^4.17.19"
   },
   "devDependencies": {

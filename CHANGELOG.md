@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/open-rpc/mock-server/compare/1.7.0...1.7.1) (2020-10-14)
+
+
+### Bug Fixes
+
+* update node version and install missing commander ([6766fdb](https://github.com/open-rpc/mock-server/commit/6766fdbcf1e9473223971ef0511b9eb821b77985))
+
 # [1.7.0](https://github.com/open-rpc/mock-server/compare/1.6.0...1.7.0) (2020-08-05)
 
 

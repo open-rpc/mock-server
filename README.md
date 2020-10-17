@@ -14,6 +14,8 @@
 
 Provides a mock JSON-RPC API with [Service Discovery](https://github.com/open-rpc/spec#service-discovery-method) for a given [OpenRPC document](https://github.com/open-rpc/spec#openrpc-document).
 
+Need help or have a question? Join us on [Discord](https://discord.gg/gREUKuF)!
+
 ## Install
 
 Installing the _open-rpc-mock-server_ in your local project.

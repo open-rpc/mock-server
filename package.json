@@ -31,9 +31,9 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "@open-rpc/examples": "^1.6.0",
+    "@open-rpc/examples": "^1.6.1",
     "@open-rpc/schema-utils-js": "^1.14.0",
-    "@open-rpc/server-js": "^1.8.0",
+    "@open-rpc/server-js": "^1.8.4",
     "commander": "^6.1.0",
     "lodash": "^4.17.19"
   },

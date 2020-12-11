@@ -1,3 +1,13 @@
+## [1.7.2](https://github.com/open-rpc/mock-server/compare/1.7.1...1.7.2) (2020-12-11)
+
+
+### Bug Fixes
+
+* add discord link ([c95c792](https://github.com/open-rpc/mock-server/commit/c95c7921298d1e36f373d95d21b35df8dfc8ba17))
+* remove discord badge that doesnt work ([98bd41c](https://github.com/open-rpc/mock-server/commit/98bd41ced34ce8898cb5db3f80dae3365ee30571))
+* **linting:** github action workflow ([de88c38](https://github.com/open-rpc/mock-server/commit/de88c38aeb1f5a3bab1e946e2c303e9d39bfcf39))
+* update server-js + examples to latest ([37c52b7](https://github.com/open-rpc/mock-server/commit/37c52b7d5a2ce070703520d752570d49799a2c33))
+
 ## [1.7.1](https://github.com/open-rpc/mock-server/compare/1.7.0...1.7.1) (2020-10-14)
 
 

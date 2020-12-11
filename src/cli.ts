@@ -5,7 +5,7 @@ import server, { serviceMode } from "./";
 import { parseOpenRPCDocument } from "@open-rpc/schema-utils-js";
 import { OpenrpcDocument as OpenRPC } from "@open-rpc/meta-schema";
 
-const version = require("../package.json").version; // tslint:disable-line
+const version = require("../package.json").version; // eslint-disable-line
 
 program
   .version(version, "-v, --version")

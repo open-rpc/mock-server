@@ -20,7 +20,7 @@ const createServiceMethodMapping = (s: Server, document: OpenRPC): MethodMapping
       const prefixedOpenRPCDocument = {
         ...openrpcDocument,
         methods: _.map(
-          openrpcDocument.methods,
+          (openrpcDocument.methods as MethodObject[]),
           (method: MethodObject): MethodObject => ({ ...method, name: `${prefix}${method.name}` })),
       } as OpenRPC;
 

@@ -32,13 +32,13 @@
   },
   "dependencies": {
     "@open-rpc/examples": "^1.6.1",
-    "@open-rpc/schema-utils-js": "^1.14.0",
-    "@open-rpc/server-js": "^1.8.4",
+    "@open-rpc/schema-utils-js": "1.15.0",
+    "@open-rpc/server-js": "1.8.5",
     "commander": "^6.1.0",
     "lodash": "^4.17.19"
   },
   "devDependencies": {
-    "@open-rpc/meta-schema": "^1.12.7",
+    "@open-rpc/meta-schema": "1.14.2",
     "@types/connect": "^3.4.33",
     "@types/cors": "^2.8.6",
     "@types/jest": "^26.0.7",

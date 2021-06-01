@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/open-rpc/mock-server/compare/1.7.2...1.7.3) (2021-06-01)
+
+
+### Bug Fixes
+
+* version bump to latest schema versions ([1a4dafc](https://github.com/open-rpc/mock-server/commit/1a4dafc59d085020f41a7d2f55b2e3111664ad1b))
+
 ## [1.7.2](https://github.com/open-rpc/mock-server/compare/1.7.1...1.7.2) (2020-12-11)
 
 

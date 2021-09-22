@@ -1,3 +1,11 @@
+## [1.7.4](https://github.com/open-rpc/mock-server/compare/1.7.3...1.7.4) (2021-09-22)
+
+
+### Bug Fixes
+
+* bump node version to 14.17 ([f7a1db9](https://github.com/open-rpc/mock-server/commit/f7a1db9a900b182491a5e5f42a0e86efbc65438c))
+* bump version for param by name fix ([3593632](https://github.com/open-rpc/mock-server/commit/3593632621c52460bbab1c360ff73f03fc24c5b5))
+
 ## [1.7.3](https://github.com/open-rpc/mock-server/compare/1.7.2...1.7.3) (2021-06-01)
 
 

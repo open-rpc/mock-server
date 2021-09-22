@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/open-rpc/mock-server#readme",
   "bin": {
-    "open-rpc-mock-server": "./build/cli.js"
+    "open-rpc-mock-server": "build/cli.js"
   },
   "files": [
     "bin/*.js",
@@ -33,7 +33,7 @@
   "dependencies": {
     "@open-rpc/examples": "^1.6.1",
     "@open-rpc/schema-utils-js": "1.15.0",
-    "@open-rpc/server-js": "1.9.0",
+    "@open-rpc/server-js": "1.9.1",
     "commander": "^6.1.0",
     "lodash": "^4.17.19"
   },

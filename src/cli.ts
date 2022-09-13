@@ -33,17 +33,19 @@ program
     let openrpcDocument: OpenRPC;
     try {
       openrpcDocument = await parseOpenRPCDocument(program.document);
-    } catch (e) {
-      console.error(e.message); // tslint:disable-line
-      console.error("Please revise the validation errors above and try again."); // tslint:disable-line
+    } catch (e: any) {
+      if (e) {
+        console.error(e.message); // tslint:disable-line
+        console.error("Please revise the validation errors above and try again.");
+      }
       return;
     }
 
     try {
       server(program.port || 3333, openrpcDocument).start();
-      console.log("Server Started"); //tslint:disable-line
+      console.log("Server Started");
     } catch (e) {
-      console.error(e);// tslint:disable-line
+      console.error(e);
       process.exit(1);
     }
   })

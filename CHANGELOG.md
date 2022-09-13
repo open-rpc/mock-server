@@ -1,3 +1,14 @@
+## [1.7.5](https://github.com/open-rpc/mock-server/compare/1.7.4...1.7.5) (2022-09-13)
+
+
+### Bug Fixes
+
+* add context in circle ci ([9b45846](https://github.com/open-rpc/mock-server/commit/9b458466fe5fb1fa086cc5d4e6481c67d81dd477))
+* big bump of dev deps ([f5f5978](https://github.com/open-rpc/mock-server/commit/f5f597868311f8df88dc65716d6e9432edd861b2))
+* bump node version to 16.17.0 ([fc9016d](https://github.com/open-rpc/mock-server/commit/fc9016da5d8159687fda1e8cfc1aecd1a09ea748))
+* remove dependabot badge ([54a6e1b](https://github.com/open-rpc/mock-server/commit/54a6e1b8d14070f5e9911e94a68929db13504137))
+* updated readme & docs a bit ([767afc3](https://github.com/open-rpc/mock-server/commit/767afc30d1663fcd96168648e8f6e126221c86c4))
+
 ## [1.7.4](https://github.com/open-rpc/mock-server/compare/1.7.3...1.7.4) (2021-09-22)
 
 
